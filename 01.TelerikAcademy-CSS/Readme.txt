@@ -1,3 +1,3 @@
-05.TelerikAcademy-CSS
+TelerikAcademy-CSS
 
 Homework-CSS
