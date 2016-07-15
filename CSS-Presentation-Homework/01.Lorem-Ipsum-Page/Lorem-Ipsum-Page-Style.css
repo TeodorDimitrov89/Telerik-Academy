@@ -1,0 +1,16 @@
+@font-face
+{
+    font-family: 'Edwardian Script ITC';
+    src:url('EdwardianScriptITC.ttf'),
+    url('EdwardianScriptitc.ttf');
+}
+p {
+    color: #0094ff;
+    font-size: 1.3em;
+}
+p::first-letter {
+    font-family: 'Edwardian Script ITC';
+    color: #0094ff;
+    font-size:1.6em;
+    font-weight: bold;
+}
