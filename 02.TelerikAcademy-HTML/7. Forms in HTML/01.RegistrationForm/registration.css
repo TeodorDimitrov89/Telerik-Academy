@@ -1,0 +1,45 @@
+table {
+     border: thin solid black;
+ }
+td {
+    border: thin solid black;
+}
+.box {
+    width: 250px;
+    resize: none;
+}
+.textAlign {
+    text-align: right;
+    width: 150px;
+}
+#state {
+    width: 30px;
+}
+#zipCode {
+    width: 60px;
+}
+.phone {
+    width: 40px;
+}
+#phone1 {
+    width: 100px;
+}
+#month {
+    width: 20px;
+}
+#day {
+    width: 20px;
+}
+#year {
+    width: 30px;
+}
+#comments {
+    width: 200px;
+    resize: none;
+}
+#submit {
+    text-align: center;
+}
+.buttons {
+    text-align: center;
+}
