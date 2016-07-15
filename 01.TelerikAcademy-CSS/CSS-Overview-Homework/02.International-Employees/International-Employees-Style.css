@@ -1,0 +1,40 @@
+table td{
+    border: thin solid #E2E5DF;
+}
+th {
+    background-color: #57BA08;
+    border: thin #cad5bc ;
+    font-weight: normal;
+    text-align: left;
+}
+table tr td  {
+
+    padding-right: 20px;
+}
+#germany:before {
+    background-image: url("Germany.jpg");
+    background-size: 10px 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content:"";
+}
+#uk:before {
+    background-image: url("UK.png");
+    background-size: 10px 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content:"";
+}
+.mexico:before {
+    background-image: url("Mexico.jpg");
+    background-size: 10px 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content:"";
+}
+tr:nth-child(2n) {
+    background-color: #EDECDA;
+}

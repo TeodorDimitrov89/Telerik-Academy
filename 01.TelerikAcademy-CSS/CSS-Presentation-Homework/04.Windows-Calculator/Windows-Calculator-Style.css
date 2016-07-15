@@ -1,0 +1,16 @@
+div {
+    display: inline-block;
+}
+table {
+    border: solid thin grey;
+}
+td {
+    text-align: left;
+    font-size: 0.8em;
+    color: #aac9e3
+}
+#display {
+    width: 230px;
+    height: 25px;
+    text-align: right;
+}
