@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMLTables</title>
+    <style>
+        #fresh {
+            text-align:right;
+        }
+        td {
+            text-align: center;
+        }
+        #right {
+            text-align:right;
+        }
+        #none {
+            text-align: right;
+        }
+        #left {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col width="150">
+            <col width="200">
+        </colgroup>
+        <thead id="fresh">
+        <tr>
+            <td colspan="2">
+                <em>Fresh Fruits</em>
+            </td>
+        </tr>
+        </thead>
+
+        <tr>
+            <td colspan="1">
+                It has long been know that a diet that includes at least a few servings of fresh fruit every day will help keep you healthy,fit and trim.
+            </td>
+            <td><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSogDH1EfWSjlZOhr8qdhKfkP27b1mPk3UiPp-2S4pavDAil7kr" width="200" alt="fruits">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1px" cellspacing="0">
+        <colgroup>
+            <col width="40">
+            <col width="40">
+            <col width="40">
+            <col width="40">
+            <col width="40">
+        </colgroup>
+        <thead>
+        <tr>
+            <td colspan="3">Title goes here</td>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        </thead>
+        <tr>
+            <td id= "left" rowspan="3">C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td>G</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td colspan="2">I</td>
+            <td id="none" rowspan="2">J</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+        </tr>
+        <tr>
+            <td id="right">N</td>
+            <td colspan="4">O</td>
+        </tr>
+    </table>
+
+
+    <br>
+  <table border="1px" cellspacing="0">
+        <tr class="row1">
+            <td colspan="3">Title goes here</td>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        <tr class="row2">
+            <td rowspan="3">C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td>G</td>
+        </tr>
+        <tr class="row3">
+            <td>H</td>
+            <td colspan="2">I</td>
+            <td rowspan="2">J</td>
+        </tr>
+        <tr class="row4">
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+        </tr>
+        <tr class="row5">
+            <td>N</td>
+            <td colspan="4">O</td>
+        </tr>
+    </table>
+</body>
+</html>
