@@ -1,0 +1,1 @@
+I used 'var' instead of 'let', because bgcoder don't support ECMAScript 6.
