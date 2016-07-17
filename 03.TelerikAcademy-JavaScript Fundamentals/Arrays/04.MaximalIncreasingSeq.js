@@ -1,3 +1,5 @@
+"use strict";
+
 function maxIncreasingSequence(arr) {
     var args = arr[0].split('\n');
     var numArray = [];
