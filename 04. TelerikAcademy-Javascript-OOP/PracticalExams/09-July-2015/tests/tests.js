@@ -1,11 +1,12 @@
 /* globals require, describe, it */
-var expect = require('chai').expect,
+let expect = require('chai').expect,
     result;
 // const {expect} = require('chai');
 // const result = require('../online-catalogs')();
+
 /* beforeach: start */
-var utils = (function() {
-    var CONSTS = {
+let utils = (function() {
+    let CONSTS = {
         NAME: {
             MIN: 2,
             MAX: 40
@@ -146,7 +147,7 @@ describe('Academy Catalogs', function() {
         describe('Valid tests', function() {
             // test 1
             it('expect getBook to exist, to be a function and to return object with properties unique id, name, description, isbn and genre', function () {
-                var name,
+                let name,
                     isbn,
                     genre,
                     description,
