@@ -145,7 +145,7 @@ describe('Academy Catalogs', function() {
 
     describe('Book tests', function() {
         describe('Valid tests', function() {
-            // test 1
+            // tests 1
             it('expect getBook to exist, to be a function and to return object with properties unique id, name, description, isbn and genre', function () {
                 let name,
                     isbn,
@@ -192,7 +192,7 @@ describe('Academy Catalogs', function() {
             });
         });
         describe('Invalid tests', function() {
-            // test 2
+            // tests 2
             it('Expect invalid name to throw', function() {
 
                 expect(result.getBook).to.exist;
@@ -258,7 +258,7 @@ describe('Academy Catalogs', function() {
                 expect(testName_Long).to.throw();
                 expect(testNameSetter_Long).to.throw();
             });
-            // test 3
+            // tests 3
             it('Expect invalid isbn to throw', function() {
                 function testISBN_undefined() {
                     result.getBook(utils.valid.getName(), undefined, utils.valid.getGenre(), utils.valid.getDescription());
@@ -328,7 +328,7 @@ describe('Academy Catalogs', function() {
                 expect(testISBN_not10or13).to.throw();
                 expect(testISBNSetter_not10or13).to.throw();
             });
-            // test 4
+            // tests 4
             it('Expect invalid genre to throw', function() {
                 function testGenre_undefined() {
                     result.getBook(utils.valid.getName(), utils.valid.getISBN10(), undefined, utils.valid.getDescription());
@@ -391,7 +391,7 @@ describe('Academy Catalogs', function() {
                 expect(testGenre_Long).to.throw();
                 expect(testGenreSetter_Long).to.throw();
             });
-            // test 5
+            // tests 5
             it('Expect invalid description to throw', function() {
 
                 function testDescription_undefined() {
@@ -434,7 +434,7 @@ describe('Academy Catalogs', function() {
 
     describe('Media tests', function() {
         describe('Valid tests', function() {
-            // test 6
+            // tests 6
             it('expect getMedia to exist, to be a function and to return object with properties unique id, name, description, duration and rating', function() {
                 var name,
                     duration,
@@ -478,7 +478,7 @@ describe('Academy Catalogs', function() {
             });
         });
         describe('Invalid tests', function() {
-            // test 7
+            // tests 7
             it('Expect invalid name to throw', function() {
 
                 function testName_undefined() {
@@ -581,7 +581,7 @@ describe('Academy Catalogs', function() {
                 expect(testName_Long).to.throw();
                 expect(testNameSetter_Long).to.throw();
             });
-            // test 8
+            // tests 8
             it('Expect invalid description to throw', function() {
 
                 function testDescription_undefined() {
@@ -643,7 +643,7 @@ describe('Academy Catalogs', function() {
                 expect(testDescription_EmptyString).to.throw();
                 expect(testDescriptionSetter_EmptyString).to.throw();
             });
-            // test 9
+            // tests 9
             it('Expect invalid rating to throw', function() {
 
                 function testRating_undefined() {
@@ -725,7 +725,7 @@ describe('Academy Catalogs', function() {
                 expect(testRating_Large).to.throw();
                 expect(testRatingSetter_Large).to.throw();
             });
-            // test 10
+            // tests 10
             it('Expect invalid duration to throw', function() {
 
                 function testDuration_undefined() {
@@ -792,7 +792,7 @@ describe('Academy Catalogs', function() {
 
     describe('BookCatalog tests', function() {
         describe('Valid tests', function() {
-            // test 11
+            // tests 11
             it('expect getBookCatalog to exist, to be a function and to return object with properties name and unique id and methods: add(), find() with 1 param and search() with 1 param', function() {
                 var name = utils.valid.getName(),
                     catalog = result.getBookCatalog(name);
@@ -821,7 +821,7 @@ describe('Academy Catalogs', function() {
                 expect(catalog.getGenres).to.be.a('function');
                 expect(catalog.getGenres.length).to.equal(0);
             });
-            // test 12
+            // tests 12
             it('expect bookCatalog.add() to add books only and to work with array or books separated with comma', function() {
                 var catalog,
                     name,
@@ -842,23 +842,23 @@ describe('Academy Catalogs', function() {
                     books.push(result.getBook(name, isbn, genre, description));
                 }
 
-                // test single item add
+                // tests single item add
                 resultOfAdd = catalog.add(books[0]);
                 expect(catalog.items[0]).to.equal(books[0]);
                 expect(resultOfAdd).to.equal(catalog);
 
-                //test multiple items add
+                //tests multiple items add
                 catalog.add(books[1], books[2]);
                 expect(catalog.items[1]).to.equal(books[1]);
                 expect(catalog.items[2]).to.equal(books[2]);
 
-                // test array add
+                // tests array add
                 catalog.add(books);
                 expect(catalog.items[3]).to.equal(books[0]);
                 expect(catalog.items[4]).to.equal(books[1]);
                 expect(catalog.items[5]).to.equal(books[2]);
             });
-            // test 13
+            // tests 13
             it('expect bookCatalog.getGenres() to get unique genres', function() {
                 var catalog,
                     genre,
@@ -871,7 +871,7 @@ describe('Academy Catalogs', function() {
 
                 catalog = result.getBookCatalog(utils.valid.getName());
 
-                // test with one book
+                // tests with one book
                 genre = 'generic';
                 book = {
                     id: id,
@@ -886,7 +886,7 @@ describe('Academy Catalogs', function() {
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(genre);
 
-                // test with multiple books
+                // tests with multiple books
                 for (i = 0; i < len; i += 1) {
                     book = {
                         id: (i + len),
@@ -904,13 +904,13 @@ describe('Academy Catalogs', function() {
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(len + 1);
 
-                // test with no genre
+                // tests with no genre
                 catalog = result.getBookCatalog(utils.valid.getName());
                 findResult = catalog.getGenres();
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(0); //*/
             });
-            // test 14
+            // tests 14
             it('expect bookCatalog.find() by id to find the leftmost book in the items array or return null', function() {
                 var catalog,
                     book,
@@ -938,7 +938,7 @@ describe('Academy Catalogs', function() {
                 catalog.items.push(book);
                 expect(catalog.find(id)).to.equal(book);
 
-                // test with multiple books
+                // tests with multiple books
                 for (i = 0; i < len; i += 1) {
                     /*name = utils.valid.getName();
                      isbn = utils.valid.getISBN13();
@@ -977,7 +977,7 @@ describe('Academy Catalogs', function() {
                 expect(testFindID_null).to.throw();
                 expect(testFindID_string).to.throw();
             });
-            // test 15
+            // tests 15
             it('expect bookCatalog.find() by options to find an array of book in the items array or return null', function() {
                 var catalog,
                     book,
@@ -999,7 +999,7 @@ describe('Academy Catalogs', function() {
                 expect(catalog.find({ name: 'nonexistent' }).length).to.exits; // it is an array-like object
                 expect(catalog.find({ name: 'nonexistent' }).length).to.equal(0);
 
-                // test with one book
+                // tests with one book
                 book = {
                     id: id,
                     name: utils.valid.getName(),
@@ -1013,7 +1013,7 @@ describe('Academy Catalogs', function() {
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(book);
 
-                // test with multiple books
+                // tests with multiple books
                 for (i = 0; i < len; i += 1) {
                     book = {
                         id: (i + len),
@@ -1036,12 +1036,12 @@ describe('Academy Catalogs', function() {
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(books[2]);
 
-                // test search by genre
+                // tests search by genre
                 findResult = catalog.find({ genre: 'generic1' });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
             });
-            // test 16
+            // tests 16
             it('expect bookCatalog.search() to return an array of found items or empty array', function() {
                 var i,
                     catalog,
@@ -1064,7 +1064,7 @@ describe('Academy Catalogs', function() {
 
                 pattern = book.description.substr(3, 6);
                 expect(catalog.search(pattern)).to.eql([book]);
-                // test with multiple books
+                // tests with multiple books
                 catalog.items = [];
                 for (i = 0; i < len; i += 1) {
                     book = {
@@ -1083,7 +1083,7 @@ describe('Academy Catalogs', function() {
                 });
                 expect(catalog.search(pattern)).to.eql(matchingBooks);
             });
-            // test 17
+            // tests 17
             it('Expect bookCatalog.search() to return empty array, when no books in catalog and when no books that contain the pattern ', function() {
                 var catalog,
                     i,
@@ -1106,7 +1106,7 @@ describe('Academy Catalogs', function() {
             });
         });
         describe('Invalid tests', function() {
-            // test 18
+            // tests 18
             it('Expect bookCatalog.search() to throw if pattern is undefined, null or empty string ', function() {
                 var catalog = result.getBookCatalog(utils.valid.getName());
 
@@ -1126,7 +1126,7 @@ describe('Academy Catalogs', function() {
                 expect(testSearch_null).to.throw();
                 expect(testSearch_EmptyString).to.throw();
             });
-            // test 19
+            // tests 19
             it('expect invalid name to throw', function() {
                 var catalog,
                     name,
@@ -1137,7 +1137,7 @@ describe('Academy Catalogs', function() {
                 name = utils.valid.getName();
                 catalog = result.getBookCatalog(name);
 
-                // test if id is unique
+                // tests if id is unique
                 expect(catalog.id).to.be.a('number');
                 count = 10000;
                 ids = {};
@@ -1147,7 +1147,7 @@ describe('Academy Catalogs', function() {
                     ids[catalog.id] = 1;
                 }
 
-                // test name exceptions
+                // tests name exceptions
                 function testName_undefined() {
                     result.getBookCatalog();
                 }
@@ -1204,7 +1204,7 @@ describe('Academy Catalogs', function() {
                 expect(testName_Long).to.throw();
                 expect(testNameSetter_Long).to.throw();
             });
-            // test 20
+            // tests 20
             it('expect bookCatalog.add() to throw', function() {
                 var duration,
                     rating,
@@ -1254,7 +1254,7 @@ describe('Academy Catalogs', function() {
     });
     describe('MediaCatalog tests', function() {
         describe('Valid tests', function() {
-            // test 21
+            // tests 21
             it('expect getMediaCatalog to exist, to be a function and to return object with properties name and unique id and methods: add(), find() with 1 param and search() with 1 param', function() {
                 var name = utils.valid.getName(),
                     catalog = result.getMediaCatalog(name);
@@ -1287,7 +1287,7 @@ describe('Academy Catalogs', function() {
                 expect(catalog.getSortedByDuration).to.be.a('function');
                 expect(catalog.getSortedByDuration.length).to.equal(0);
             });
-            // test 22
+            // tests 22
             it('expect mediaCatalog.add() to add media only and to work with array or media separated with comma', function() {
                 var catalog,
                     name,
@@ -1308,23 +1308,23 @@ describe('Academy Catalogs', function() {
                     medias.push(result.getMedia(name, rating, duration, description));
                 }
 
-                // test single item add
+                // tests single item add
                 resultOfAdd = catalog.add(medias[0]);
                 expect(catalog.items[0]).to.equal(medias[0]);
                 expect(resultOfAdd).to.equal(catalog);
 
-                //test multiple items add
+                //tests multiple items add
                 catalog.add(medias[1], medias[2]);
                 expect(catalog.items[1]).to.equal(medias[1]);
                 expect(catalog.items[2]).to.equal(medias[2]);
 
-                // test array addmedias
+                // tests array addmedias
                 catalog.add(medias);
                 expect(catalog.items[3]).to.equal(medias[0]);
                 expect(catalog.items[4]).to.equal(medias[1]);
                 expect(catalog.items[5]).to.equal(medias[2]);
             });
-            // test 23
+            // tests 23
             it('expect mediaCatalog.getTop() to get unique genres', function() {
                 var catalog,
                     name,
@@ -1339,7 +1339,7 @@ describe('Academy Catalogs', function() {
 
                 catalog = result.getMediaCatalog(utils.valid.getName());
 
-                // test with one medias
+                // tests with one medias
                 rating = 1;
                 name = 'generic';
                 media = {
@@ -1358,7 +1358,7 @@ describe('Academy Catalogs', function() {
                 expect(findResult[0].duration).to.not.exist;
                 expect(findResult[0].description).to.not.exist;
 
-                // test with multiple books
+                // tests with multiple books
                 for (i = 0; i < len; i += 1) {
                     media = {
                         id: (i + len),
@@ -1393,7 +1393,7 @@ describe('Academy Catalogs', function() {
                 expect(testGetTop_NaN).to.throw();
                 expect(testGetTop_ltOne).to.throw();
             });
-            // test 24
+            // tests 24
             it('expect mediaCatalog.find() by id to find the leftmost media in the items array or return null', function() {
                 var catalog,
                     media,
@@ -1422,7 +1422,7 @@ describe('Academy Catalogs', function() {
                 catalog.items.push(media);
                 expect(catalog.find(id)).to.equal(media);
 
-                // test with multiple books
+                // tests with multiple books
                 for (i = 0; i < len; i += 1) {
                     book = {
                         id: (i + len),
@@ -1456,7 +1456,7 @@ describe('Academy Catalogs', function() {
                 expect(testFindID_null).to.throw();
                 expect(testFindID_string).to.throw(); //*/
             });
-            // test 25
+            // tests 25
             it('expect mediaCatalog.find() by options to find an array of media in the items array or return null', function() {
                 var catalog,
                     media,
@@ -1478,7 +1478,7 @@ describe('Academy Catalogs', function() {
                 expect(catalog.find({ name: 'nonexistent' }).length).to.exits; // it is an array-like object
                 expect(catalog.find({ name: 'nonexistent' }).length).to.equal(0);
 
-                // test with one book
+                // tests with one book
                 media = {
                     id: id,
                     name: utils.valid.getName(),
@@ -1492,7 +1492,7 @@ describe('Academy Catalogs', function() {
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(media);
 
-                // test with multiple books
+                // tests with multiple books
                 for (i = 0; i < len; i += 1) {
                     media = {
                         id: (i + len),
@@ -1515,12 +1515,12 @@ describe('Academy Catalogs', function() {
                 expect(findResult.length).to.equal(1);
                 expect(findResult[0]).to.equal(medias[2]);
 
-                // test search by genre
+                // tests search by genre
                 findResult = catalog.find({ rating: 4 });
                 expect(findResult).to.exits;
                 expect(findResult.length).to.equal(1);
             });
-            // test 26
+            // tests 26
             it('expect mediaCatalog.search() to return an array of found items or empty array', function() {
                 var i,
                     catalog,
@@ -1543,7 +1543,7 @@ describe('Academy Catalogs', function() {
 
                 pattern = media.description.substr(3, 6);
                 expect(catalog.search(pattern)).to.eql([media]);
-                // test with multiple books
+                // tests with multiple books
                 catalog.items = [];
                 for (i = 0; i < len; i += 1) {
                     media = {
@@ -1562,7 +1562,7 @@ describe('Academy Catalogs', function() {
                 });
                 expect(catalog.search(pattern)).to.eql(matchingMedia);
             });
-            // test 27
+            // tests 27
             it('Expect mediaCatalog.search() to return empty array, when no media in catalog and when no media that contain the pattern ', function() {
                 var catalog,
                     i,
@@ -1586,7 +1586,7 @@ describe('Academy Catalogs', function() {
             });
         });
         describe('Invalid tests', function() {
-            // test 28
+            // tests 28
             it('Expect mediaCatalog.search() to throw if pattern is undefined, null or empty string ', function() {
                 var catalog = result.getMediaCatalog(utils.valid.getName());
 
@@ -1606,7 +1606,7 @@ describe('Academy Catalogs', function() {
                 expect(testSearch_null).to.throw();
                 expect(testSearch_EmptyString).to.throw();
             });
-            // test 29
+            // tests 29
             it('expect invalid name to throw', function() {
                 var catalog,
                     name,
@@ -1617,7 +1617,7 @@ describe('Academy Catalogs', function() {
                 name = utils.valid.getName();
                 catalog = result.getMediaCatalog(name);
 
-                // test if id is unique
+                // tests if id is unique
                 expect(catalog.id).to.be.a('number');
                 count = 10000;
                 ids = {};
@@ -1627,7 +1627,7 @@ describe('Academy Catalogs', function() {
                     ids[catalog.id] = 1;
                 }
 
-                // test name exceptions
+                // tests name exceptions
                 function testName_undefined() {
                     result.getMediaCatalog();
                 }
@@ -1684,7 +1684,7 @@ describe('Academy Catalogs', function() {
                 expect(testName_Long).to.throw();
                 expect(testNameSetter_Long).to.throw();
             });
-            // test 30
+            // tests 30
             it('expect mediaCatalog.add() to throw', function() {
                 var duration,
                     rating,
